@@ -30,7 +30,29 @@ export function Header() {
         scrolled ? "glass shadow-soft border-b border-border/60" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      {/* Background image with subtle cell phone repair theme */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1920&q=80')`,
+          }}
+          animate={{
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        {/* White overlay for subtle effect */}
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-[1px]" />
+        {/* Gradient overlay for better readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/85" />
+      </div>
+
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
         <a href="#inicio" className="flex items-center gap-2">
           <div className="relative grid h-9 w-9 place-items-center rounded-xl gradient-brand shadow-elev">
             <span className="font-display text-lg font-extrabold text-white">P</span>
